@@ -2,9 +2,35 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
+    string AuthorizationKey = Model.AuthorizationKey;
 }
+<div>
+    <div>
+        <input value="@AuthorizationKey"></input>
+        <form method="post">
+            <input type="submit" id="btnLoadChallenges" value="Load Challenges" asp-page-handler="LoadChallenges"/>
+        </form>
+    </div>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <div>
+        <h2>ඞ Challenge 1</h2>
+        <form method="post">
+            <button class="btn btn-primary" type="submit" asp-page-handler="StartChallenge1">Start Challenge 1</button>
+        </form>
+    </div>
+    
+
+    <div>
+        <h2>ඞ Challenge 2</h2>
+        <form method="post">
+            <button class="btn btn-primary" type="submit" asp-page-handler="StartChallenge2">Start Challenge 2</button>
+        </form>
+    </div>
+
+    <div>
+        <h2>ඞ Challenge 3</h2>
+        <form method="post">
+            <button class="btn btn-primary" type="submit" asp-page-handler="StartChallenge3">Start Challenge 3</button>
+        </form>
+    </div>
 </div>
